@@ -10,18 +10,20 @@ const Counter = {
 
   cacheDOM: function(){
     this.root = document.querySelector(this.rootElement);
-    this.incBtn = document.querySelector('.increment');
-    this.decBtn = document.querySelector('.decrement');
-    this.output = document.querySelector('.output');
+    this.incBtn = this.root.querySelector('.increment');
+    this.decBtn = this.root.querySelector('.decrement');
+    this.amount = this.root.querySelector('.amount');
+    this.output = this.root.querySelector('.output');
   };
 
   bindEvents: function(){
     this.incBtn.addEventListener('click', () => {
-      this.count +=1;
+      console.dir(this.amount);
+      this.count += parseInt(this.amount.value);
       this.render();
     });
     this.decBtn.addEventListener('click', () => {
-      this.count -=1;
+      this.count -= parseInt(this.amount.value);
       this.render();
     });
   };
