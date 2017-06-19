@@ -1,8 +1,8 @@
 const Counter = {
   rootElement = "#app",
-  count = 0;
+  count = 0,
 
-  start function(){
+  start: function(){
     this.cacheDOM();
     this.bindEvents();
     this.render();
@@ -30,7 +30,6 @@ const Counter = {
 
   render: function(){
     this.output.textContent = this.count;
-}
 };
 
 Counter.start();
